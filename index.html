@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- Map API: -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="title">
+      <p>IP Address Tracker</p>
+      <div class="search">
+        <input type="text" name="inputSearch" id="inputSearch" placeholder="search for any IP address...">
+        <button id="submit-btn" type="submit">
+          <img src="./images/icon-arrow.svg" alt="">
+        </button>
+      </div>
+
+    </div>
+    <div class="background-img">
+      <div class="info">
+        <div class="info-content">
+          <div id="ip-display">
+            <p class="title-display">IP ADDRESS</p>
+            <p id="ip-display-p">00.000.00.000</p>
+          </div>
+          <div id="location-display">
+            <p class="title-display">LOCATION</p>
+            <p id="location-display-p">Earth</p>
+          </div>
+          <div id="timezone-display">
+            <p class="title-display">TIMEZONE</p>
+            <p id="timezone-display-p">UTC --</p>
+          </div>
+          <div id="isp-display">
+            <p class="title-display">ISP</p>
+            <p id="isp-display-p">---</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="modal-success">
+      <div class="wrapper"> 
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/> 
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/> 
+        </svg>
+        <div>The Geolocation has been updated</div>
+      </div>
+    </div>
+    <div id="modal-error">
+      <div class="wrapper-error"> 
+        <svg class="checkmark-error" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark_circle_error" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark_check_error" fill="none" d="M14.1 14.1l23.8 23.8 m0,-23.8 l-23.8,23.8"/>
+        </svg>
+        <div>You have entered an invalid IP address!</div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="content-wrapper"></div>
+</body>
+<!-- Map API: -->
+<script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+<script src="./main.js"></script>
+</html>
